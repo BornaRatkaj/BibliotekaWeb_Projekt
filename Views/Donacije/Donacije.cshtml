@@ -1,0 +1,66 @@
+﻿@model BibliotekaWeb.Models.ViewModeli.DonacijaViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2>Doniraj Knjigu</h2>
+            <p class="text-muted">Ispunute upit kako bi poslali zahtjev za donaciju vaše knjige.</p>
+
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["Message"]
+                </div>
+            }
+
+            <form asp-action="Kreiraj" method="post" class="donacija-form">
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" placeholder="E-mail pošiljatelja" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ime"></label>
+                    <input asp-for="Ime" class="form-control" />
+                    <span asp-validation-for="Ime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Prezime"></label>
+                    <input asp-for="Prezime" class="form-control" />
+                    <span asp-validation-for="Prezime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BrojMobitela"></label>
+                    <input asp-for="BrojMobitela" class="form-control" />
+                    <span asp-validation-for="BrojMobitela" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TipKnjige"></label>
+                    <select asp-for="TipKnjige" class="form-control">
+                        <option value="">Odaberite žanr knjige</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Romansa">Romansa</option>
+                        <option value="Poezija">Poezija</option>
+                        <option value="Scfi">Scfi</option>
+                        <option value="Triler">Triler</option>
+                        <option value="Mit">Mit</option>
+                    </select>
+                    <span asp-validation-for="TipKnjige" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImeKnjige"></label>
+                    <input asp-for="ImeKnjige" class="form-control" />
+                    <span asp-validation-for="ImeKnjige" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DodatneInformacije"></label>
+                    <textarea asp-for="DodatneInformacije" class="form-control" rows="5"></textarea>
+                    <span asp-validation-for="DodatneInformacije" class="text-danger"></span>
+                </div>
+                <hr/>
+                <button type="submit" class="btn btn-primary">Send</button>
+                <p class="text-muted mt-3">*Ovaj upit će biti poslani na mail od biblioteke. - Biblioteka.vž@gmail.com</p>
+            </form>
+        </div>
+    </div>
+</div>

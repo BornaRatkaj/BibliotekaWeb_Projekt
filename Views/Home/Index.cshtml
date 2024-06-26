@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="image-container">
+    <img src="~/images/Pocetna.jpg" alt="Banner Image" class="img-fluid custom-banner rounded">
+</div>
+
+<hr class="custom-hr">
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <h1>Gradska biblioteka i čitaonica</h1>
+        </div>
+    </div>
+
+    
+    <div class="row mt-4">
+        <div class="col-md-3 text-center">
+            <img src="~/images/Cijenik.png" alt="Cijenik" class="img-fluid2 rounded">
+            <p>Kliknite ovdje da vidite <a href="@Url.Action("Cijenik", "Home")">Cijenik</a></p>
+        </div>
+        <div class="col-md-3 text-center">
+            <img src="~/images/Vrijeme.jpg" alt="Radno vrijeme" class="img-fluid2 rounded">
+            <p class="custom-text1"> Radno vijreme knjižnice</p>
+            <p><a href="@Url.Action("RadnoVrijeme", "Home")">Radno vrijeme</a></p>
+        </div>
+    </div>
+</div>
+
+<hr class="custom-hr">
+
+<div class="container2 mt-3">
+    <h2 class="custom-h2"><u>Novosti !</u></h2>
+    <div class="news-item d-flex mb-4">
+        <hr>
+        <div class="novosti-image">
+            <img src="~/images/zvijer.jpg" alt="News Image 1" class="img-fluid rounded">
+        </div>
+        <div class="news-text ms-3">
+            <p><strong>14.06.2024. - Predstavljanje knjige Zvijeri i stvorenja - Mitovi i pripovijetke</strong></p>
+            <p>Stanek nakladništvo i Gradska knjižnica i čitaonica "Metel Ožegović" Varaždin srdačno Vas pozivaju na predstavljanje knjige Zvijeri i stvorenja - mitovi i pripovijetke. O knjizi će govoriti: Josip Stanek, nakladnik, Nebojša Budanovac, prevoditelj knjige i Kristijan Petrović, urednik knjige. Petak, 14.06.2024. u 18 sati u Gradskoj knjižnici Varaždin, Franjevački trg 4.</p>
+        </div>
+    </div>
+    <hr>
+    <div class="news-item d-flex mb-4">
+        <div class="novosti-image1">
+            <img src="~/images/biblija.jpg" alt="News Image 2" class="img-fluid rounded">
+        </div>
+        <div class="news-text ms-3">
+            <p><strong>11.06.2024. - Predstavljanje knjige i aplikacije Biblija - Suvremeni hrvatski prijevod (SHP)</strong></p>
+            <p>Gradska knjižnica i čitaonica "Metel Ožegović" Varaždin srdačno Vas poziva na predstavljanje knjige i aplikacije Biblija - Suvremeni hrvatski prijevod (SHP). Na predstavljanju će govoriti voditelj projekta i glavni urednik prijevoda Biblije SHP Goran Medved, mag. theol. i izvršna voditeljica službe "Hrvatska za Krista" Željka Košić. Voditelj: Dubravko Sidor. Utork, 11. lipnja 2024. u 19 sati. Gradska knjižnica i čitaonica "Metel Ožegović" Varaždin, Franjevački trg 4.</p>
+        </div>
+    </div>
+    <hr>
+    <div class="news-item d-flex mb-4">
+        <div class="novosti-image1">
+            <img src="~/images/operativna.jpg" alt="News Image 3" class="img-fluid rounded">
+        </div>
+        <div class="news-text ms-3">
+            <p><strong>06.06.2024. - Predstavljanje knjige Operativna i strateška nabava autorice Nataše Cikač</strong></p>
+            <p>Gradska knjižnica i čitaonica "Metel Ožegović" Varaždin srdačno Vas poziva na predstavljanje knjige Operativna i strateška nabava autorice Nataše Cikač. Knjigu će predstaviti Lidija Benjak Gotić, moderatorica i Nataša Cikač, autorica. Glazbeni dio programa: Rosana Cepanec uz pratnju. Četvrtak, 6. lipnja 2024. u 19 sati, Gradska knjižnica Varaždin, Franjevački trg 4.</p>
+        </div>
+    </div>
+    <hr>
+</div>
+<br />
+<div class="mapa">
+    <div>
+        <p class="fw-bold text-center">LOKACIJA</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d454.02439337648457!2d16.338564052477633!3d46.30536235494192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4768aad9fc3d99bd%3A0x676f95fe2e601094!2sVila%20Bedekovic!5e0!3m2!1sen!2shr!4v1718195808493!5m2!1sen!2shr"
+            width="400"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+</div>

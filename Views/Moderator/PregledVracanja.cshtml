@@ -1,0 +1,26 @@
+﻿@model List<BibliotekaWeb.Models.Vracanje>
+
+<h1>Popis vracanja knjiga</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Knjiga</th>
+            <th>Datum Vracanja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var vracanje in Model)
+            {
+                <tr>
+                    <td>@vracanje.User.UserName</td>
+                    <td>@vracanje.Knjiga.Naziv</td>
+                    <td>@vracanje.DatumVracanja.ToString()</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

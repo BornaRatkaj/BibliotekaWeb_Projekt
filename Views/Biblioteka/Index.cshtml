@@ -1,0 +1,52 @@
+﻿@model BibliotekaWeb.Models.ViewModeli.SkladisteViewModel
+
+<div class="d-flex justify-content-end mb-3">
+    <div>
+        <a asp-action="MojeKnjige" asp-controller="Biblioteka" class="btn btn-primary">Moje knjige</a>
+        <a asp-action="KupljeneKnjige" asp-controller="Biblioteka" class="btn btn-primary">Kupljene knjige</a>
+    </div>
+</div>
+
+<div class="text-center">
+    <h1 class="naslov-popis">Popis dostupnih knjiga</h1>
+</div>
+
+<div class="d-flex justify-content-start mb-3">
+    <form method="get" asp-action="Index" class="form-inline">
+        <div class="input-group">
+            <input type="text" name="Pretrazivanje" value="@Model.Pretrazivanje" class="form-control" placeholder="Traži po imenu knjige" style="width: 300px;" />
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">Pretraži</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Cijena</th>
+            <th>Autor</th>
+            <th>Žanr</th>
+            <th>Posudi</th>
+            <th>Kupi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Skladiste != null)
+        {
+            @foreach (var skladiste in Model.Skladiste)
+            {
+                <tr>
+                    <td>@skladiste.Knjiga.Naziv</td>
+                    <td>@($"{skladiste.Knjiga.Cijena} €")</td>
+                    <td>@skladiste.Knjiga.Autor.FullIme</td>
+                    <td>@skladiste.Knjiga.Zanr.Naziv</td>
+                    <td><a asp-action="Posudi" asp-controller="Biblioteka" asp-route-knjigaID="@skladiste.Knjiga.Id" class="btn btn-primary btn-posudi">Posudi</a></td>
+                    <td><a asp-action="Kupi" asp-controller="Biblioteka" asp-route-knjigaID="@skladiste.Knjiga.Id" class="btn btn-primary btn-kupi">Kupi</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

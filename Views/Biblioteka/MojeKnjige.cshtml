@@ -1,0 +1,35 @@
+﻿@model List<BibliotekaWeb.Models.Posudenje>
+
+<div class="d-flex align-items-center mb-3">
+    <h2 class="flex-grow-1 mb-0">Moje Knjige</h2>
+
+<a asp-action="KupljeneKnjige" asp-controller="Biblioteka" class="btn btn-primary">Kupljene knjige</a>
+<a asp-action="Index" asp-controller="Biblioteka" class=" btn btn-primary ms-2">Natrag</a>
+</div>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Knjiga</th>
+            <th>Datum Posudbe</th>
+            <th>Datum Potrebnog Vracanja</th>
+            <th>Vrati</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var posudba in Model)
+            {
+                <tr>
+                    <td>@posudba.User.UserName</td>
+                    <th>@posudba.Knjiga.Naziv</th>
+                    <td>@posudba.DatumPosudbe.ToString()</td>
+                    <td>@posudba.DatumPotrebnogVracanja.ToString()</td>
+                    <td><a asp-action="Vrati" asp-controller="Biblioteka" asp-route-knjigaID="@posudba.Knjiga.Id" class="btn btn-primary">Vrati</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

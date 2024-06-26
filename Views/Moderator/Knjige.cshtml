@@ -1,0 +1,62 @@
+﻿@model BibliotekaWeb.Models.ViewModeli.KnjigaViewModel
+
+<form asp-action="Knjige" method="post">
+    <div class="form-group">
+        <label asp-for="Naziv" class="control-label"></label>
+        <input asp-for="Naziv" class="form-control" />
+        <span asp-validation-for="Naziv" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Cijena" class="control-label"></label>
+        <input asp-for="Cijena" class="form-control" />
+        <span asp-validation-for="Cijena" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="zanarDropdown">Odaberi žanr</label>
+        <select id="zanarDropdown" name="Zanar" class="form-control">
+            @foreach (var zanar in Model.Zanrovi)
+            {
+                <option value="@zanar.Naziv">@zanar.Naziv</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="authorDropdown">Odaberi autora</label>
+        <select id="authorDropdown" name="Autor" class="form-control">
+            @foreach (var autor in Model.Autori)
+            {
+                <option value="@autor.FullIme">@autor.FullIme</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary custom-button3">Dodaj</button>
+</form>
+<br />
+<h1>Popis registriranih knjiga</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Cijena</th>
+            <th>Autor</th>
+            <th>Žanr</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Knjige != null)
+        {
+            @foreach (var knjiga in Model.Knjige)
+            {
+                <tr>
+                    <td>@knjiga.Naziv</td>
+                    <td>@knjiga.Cijena</td>
+                    <td>@knjiga.Autor.FullIme</td>
+                    <td>@knjiga.Zanr.Naziv</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

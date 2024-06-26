@@ -1,0 +1,33 @@
+﻿@model List<BibliotekaWeb.Models.Transakcija>
+
+<h1>Popis transakcija</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Iznos</th>
+            <th>Uplata/Isplata</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var transakcija in Model)
+            {
+                <tr>
+                    <td>@transakcija.User.UserName</td>
+                    <td>@($"{transakcija.Iznos} €")</td>
+                    @if (transakcija.UplataIsplata == true)
+                    {
+                        <td>Uplata</td>
+                    }
+                    else
+                    {
+                        <td>Isplata</td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>

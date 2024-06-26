@@ -1,0 +1,101 @@
+﻿a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    color: white !important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+a {
+    color: #0077cc;
+}
+
+.btn-primary {
+    color: #dedcd7;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #e4f1fe;
+    background-color: #22313f;
+    border-color: #1861ac;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: #e4f1fe;
+}
+
+.navbar {
+    background-color: #22313f !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: #e4f1fe !important;
+}
+
+.navbar-brand.biblioteka {
+    font-size: 30px !important; 
+}
+
+.vertical-lajn {
+    height: 50px; 
+    color: white; 
+}
+
+.navbar-logo {
+    height: 56px;
+    width: 56px;
+    object-fit: contain;
+}
+
+.navbar-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-item {
+    margin-left: 10px; 
+}

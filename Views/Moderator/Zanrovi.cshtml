@@ -1,0 +1,32 @@
+﻿@model BibliotekaWeb.Models.ViewModeli.ZanrViewModel
+
+<form asp-action="Zanrovi" method="post">
+    <div class="form-group">
+        <label asp-for="Naziv" class="control-label"></label>
+        <input asp-for="Naziv" class="form-control" />
+        <span asp-validation-for="Naziv" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary custom-button3">Dodaj</button>
+</form>
+
+<h1>Popis registriranih žanrova</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Zanrovi != null)
+        {
+            @foreach (var knjiga in Model.Zanrovi)
+            {
+                <tr>
+                    <td>@knjiga.Naziv</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

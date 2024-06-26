@@ -1,0 +1,47 @@
+﻿@model BibliotekaWeb.Models.ViewModeli.SkladisteViewModel
+
+<form asp-action="Skladiste" method="post">
+    <div class="form-group">
+        <label for="knjigaDropdown">Select Knjiga</label>
+        <select id="knjigaDropdown" name="knjigaId" class="form-control">
+            @foreach (var knjiga in Model.Knjige)
+            {
+                <option value="@knjiga.Id">@knjiga.Naziv</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary custom-button3">Dodaj</button>
+</form>
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Cijena</th>
+            <th>Autor</th>
+            <th>Žanr</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Skladiste != null)
+        {
+            @foreach (var skladiste in Model.Skladiste)
+            {
+                <tr>
+                    <td>@skladiste.Knjiga.Naziv</td>
+                    <td>@($"{skladiste.Knjiga.Cijena} €")</td>
+                    <td>@skladiste.Knjiga.Autor.FullIme</td>
+                    <td>@skladiste.Knjiga.Zanr.Naziv</td>
+                    <td>
+                        <form asp-action="DeleteKnjiga" method="post">
+                            <input type="hidden" name="knjigaId" value="@skladiste.Knjiga.Id" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

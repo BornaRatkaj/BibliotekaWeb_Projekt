@@ -1,0 +1,32 @@
+﻿@model BibliotekaWeb.Models.ViewModeli.AutorViewModel
+
+<form asp-action="Autori" method="post">
+    <div class="form-group">
+        <label asp-for="ImeFull" class="control-label"></label>
+        <input asp-for="ImeFull" class="form-control" />
+        <span asp-validation-for="ImeFull" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary custom-button3">Dodaj</button>
+</form>
+
+<h1>Popis registriranih autora</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Popis dostupnih pisaca</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Autori != null)
+        {
+            @foreach (var knjiga in Model.Autori)
+            {
+                <tr>
+                    <td>@knjiga.FullIme</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

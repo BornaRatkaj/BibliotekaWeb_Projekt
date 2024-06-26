@@ -1,0 +1,29 @@
+﻿@model List<BibliotekaWeb.Models.Posudba>
+
+<h1>Popis posudenih knjiga</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Knjiga</th>
+            <th>Datum Posudbe</th>
+            <th>Datum Potrebnog Vracanja</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var posudba in Model)
+            {
+                <tr>
+                    <td>@posudba.User.UserName</td>
+                    <th>@posudba.Knjiga.Naziv</th>
+                    <td>@posudba.DatumPosudbe.ToString()</td>
+                    <td>@posudba.DatumPotrebnogVracanja.ToString()</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

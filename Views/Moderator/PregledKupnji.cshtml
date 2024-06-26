@@ -1,0 +1,24 @@
+﻿@model List<BibliotekaWeb.Models.Kupnja>
+
+<h1>Popis kupnja knjiga</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Knjiga</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var kupnja in Model)
+            {
+                <tr>
+                    <td>@kupnja.User.UserName</td>
+                    <td>@kupnja.Knjiga.Naziv</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

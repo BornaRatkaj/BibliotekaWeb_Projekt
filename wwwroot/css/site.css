@@ -1,0 +1,131 @@
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f0efeb;
+}
+
+.larger-textarea {
+    height: 150px;
+}
+
+.mt-3 {
+    margin-top: 2rem;
+}
+
+.align-self-center {
+    margin-top: 10px; 
+}
+
+.vertical-line {
+    border-left: 2px solid #ffffff;
+    height: 35px; 
+    margin: 0 5px; 
+}
+
+.navbar-logo {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.image-container {
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.custom-banner {
+    width: 100%; 
+    max-width: 1500px; 
+    max-height: 270px;
+}
+
+hr.custom-hr {
+    border: 0;
+    height: 3px;
+    color: red;
+    margin: 20px 0;
+}
+
+.img-fluid2 {
+    max-width: 300px;
+    max-height: 230px;
+    margin-bottom: 3px;
+}
+.custom-text1 {
+    margin-bottom: 3px;
+}
+
+.novosti-image1 img {
+    max-width: 300px;
+    max-height: 250px;
+}
+
+.custom-h2 {
+    margin-bottom: 15px;
+}
+
+.custom-table {
+    border: 2px solid black;
+}
+
+    .custom-table th,
+    .custom-table td {
+        border: 2px solid black;
+        padding: 10px;
+    }
+.posjet {
+    color: gray;
+    font-size: 12px;
+}
+
+.custom-button3 {
+    margin-top: 5px;
+}
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}
+
+.btn-posudi {
+    background-color: #0056b3; 
+    color: white;
+    border: none;
+}
+
+.btn-kupi {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+}
+
+.naslov-popis {
+    margin-bottom: 35px;
+}

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<BibliotekaWeb.Models.Kupnja>
+
+<div class="d-flex align-items-center mb-3">
+    <h2 class="flex-grow-1 mb-0">Kupljene Knjige</h2>
+
+    <a asp-action="MojeKnjige" asp-controller="Biblioteka" class="btn btn-primary">Moje knjige</a>
+    <a asp-action="Index" asp-controller="Biblioteka" class=" btn btn-primary ms-2">Natrag</a>
+</div>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Cijena</th>
+            <th>Autor</th>
+            <th>Žanr</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kupnja in Model)
+        {
+            <tr>
+                <td>@kupnja.Knjiga?.Naziv</td>
+                <td>@kupnja.Knjiga?.Cijena</td>
+                <td>@kupnja.Knjiga?.Autor?.FullIme</td>
+                <td>@kupnja.Knjiga?.Zanr?.Naziv</td>
+            </tr>
+        }
+    </tbody>
+</table>
